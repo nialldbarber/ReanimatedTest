@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -10,14 +10,17 @@ import Animated, {
 export default function Banner() {
   const height = useSharedValue(0);
 
-  const bannerHeight = useAnimatedStyle(() => {
-    return {
+  const bannerHeight = useAnimatedStyle(
+    () => ({
       height: height.value,
-    };
-  }, []);
+    }),
+    []
+  );
 
   useEffect(() => {
-    height.value = withSpring(500);
+    setTimeout(() => {
+      height.value = withSpring(500);
+    }, 700);
   }, []);
 
   return (
