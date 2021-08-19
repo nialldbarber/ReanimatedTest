@@ -16,6 +16,8 @@ import Banner from './components/Banner';
 
 const SIZE = 100.0;
 const CIRCLE_RADIUS = SIZE * 2;
+const BLUUU = 'rgba(0, 0, 256, 0.5)';
+const PINKISH = 'rgba(255, 99, 71, 0.5)';
 
 type ContextType = {
   translateX: number;
@@ -25,7 +27,7 @@ type ContextType = {
 export default function App() {
   const translateX = useSharedValue<number>(0);
   const translateY = useSharedValue<number>(0);
-  const circleColor = useSharedValue<number | string>('rgba(0, 0, 256, 0.5)');
+  const circleColor = useSharedValue<number | string>(BLUUU);
 
   const gestureEvent = useAnimatedGestureHandler<
     PanGestureHandlerGestureEvent,
@@ -48,9 +50,9 @@ export default function App() {
       }
 
       if (distance > CIRCLE_RADIUS) {
-        circleColor.value = withTiming('rgba(255, 99, 71, 0.5)');
+        circleColor.value = withTiming(PINKISH);
       } else {
-        circleColor.value = withTiming('rgba(0, 0, 256, 0.5)');
+        circleColor.value = withTiming(BLUUU);
       }
     },
   });
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
   },
   circleContainer: {
     borderWidth: 5,
-    borderColor: 'rgba(0, 0, 256, 0.5)',
+    borderColor: BLUUU,
     width: CIRCLE_RADIUS * 2,
     height: CIRCLE_RADIUS * 2,
     borderRadius: 50,
