@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {
   PanGestureHandler,
@@ -8,7 +8,6 @@ import Animated, {
   useAnimatedGestureHandler,
   useAnimatedStyle,
   useSharedValue,
-  withRepeat,
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
