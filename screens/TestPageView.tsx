@@ -1,11 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {Icon} from 'react-native-elements';
 import Banner from '../components/Banner';
+import {RootStackParamList} from '../App';
+
+type HomeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
 
 export default function TestPageView() {
-  const {navigate} = useNavigation() as any;
+  const {navigate} = useNavigation<HomeScreenProp>();
 
   return (
     <View style={styles.container}>

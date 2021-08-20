@@ -4,7 +4,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import TestPageView from './screens/TestPageView';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Test: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (

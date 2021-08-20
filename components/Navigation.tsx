@@ -1,10 +1,14 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {PINKISH} from '../screens/HomeScreen';
+import {RootStackParamList} from '../App';
+
+type TestScreenProp = StackNavigationProp<RootStackParamList, 'Test'>;
 
 export default function Navigation() {
-  const {navigate} = useNavigation() as any;
+  const {navigate} = useNavigation<TestScreenProp>();
 
   return (
     <View style={styles.container}>
