@@ -12,19 +12,13 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
+  const noHeader = {headerShown: false};
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Test"
-          component={TestPageView}
-          options={{headerShown: false}}
-        />
+        <Stack.Screen name="Home" component={HomeScreen} options={noHeader} />
+        <Stack.Screen name="Test" component={TestPageView} options={noHeader} />
       </Stack.Navigator>
     </NavigationContainer>
   );
